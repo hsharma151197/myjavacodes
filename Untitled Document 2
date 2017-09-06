@@ -1,0 +1,47 @@
+ static boolean isAnagram(String a, String b) {
+        a = a.toUpperCase();
+        b = b.toUpperCase();
+        int lengthA=a.length()-1;
+        int lengthB=b.length()-1;
+        
+        int k = 0;
+        while(k<=lengthA-1){
+            if(a.charAt(k)<=a.charAt(k+1)){
+                k++;
+            }
+            else{
+                for(int j=k+1 ; j>=1 ; j--){
+                    if(a.charAt(j)<=a.charAt(j-1)){
+                    char ch[] = a.toCharArray();
+                    char temp = ch[j];
+                    ch[j] = ch[j-1];
+                    ch[j-1] = temp;
+                    }
+                    else{
+                        continue;
+                    }
+                }
+            }
+                
+        }
+                while(k<=lengthB-1){
+            if(b.charAt(k)<=b.charAt(k+1)){
+                k++;
+            }
+            else{
+                for(int j=k+1 ; j>=1 ; j--){
+                    if(b.charAt(j)<=b.charAt(j-1)){
+                    char ch[] = b.toCharArray();
+                    char temp = ch[j];
+                    ch[j] = ch[j-1];
+                    ch[j-1] = temp;
+                    }
+                    else{
+                        continue;
+                    }
+                }
+            }
+                
+        }
+        return a.equals(b)? true : false;
+    }
